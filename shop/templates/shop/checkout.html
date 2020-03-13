@@ -1,0 +1,72 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Checkout -My Awesome Cart {% endblock %}
+{% block body %}
+<div class="container">
+	<div class="col">
+	<h2>Step1-My Awesome express checkout</h2>
+	<div id="items">
+		<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Cras justo odio
+    <span class="badge badge-primary badge-pill">14</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Dapibus ac facilisis in
+    <span class="badge badge-primary badge-pill">2</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Morbi leo risus
+    <span class="badge badge-primary badge-pill">1</span>
+  </li>
+</ul>
+
+
+	</div>
+
+</div>
+<div class="col">
+	<h2>Step 2-Enter address and other details</h2>
+
+	<form method="post" action="/shop/checkout">{% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Name</label>
+      <input type="name" class="form-control" id="inputname">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Email</label>
+      <input type="email" class="form-control" id="inputemail">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Place Order</button>
+</form>
+
+
+</div>
+</div>
+{% endblock %}
